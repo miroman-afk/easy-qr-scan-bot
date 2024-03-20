@@ -7,7 +7,7 @@
       <v-icon>
         mdi-qrcode-scan
       </v-icon>
-      Сканировать
+       Scan
     </v-btn>
     <v-spacer />
   </v-toolbar>

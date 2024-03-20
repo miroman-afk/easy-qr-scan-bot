@@ -138,6 +138,7 @@ export default {
       is_telegram_api_updated: false,
       last_code: null,
       show_history: false,
+      show_settings: false,
       // Cloud storage
       cloud_storage_keys: [],
       cloud_storage_values: {},
