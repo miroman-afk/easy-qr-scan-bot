@@ -8,7 +8,7 @@
       <AppMenu 
         @show-qr-scanner="showQRScanner()"  
         @show-history="show_history = false"
-        @show-settings="show-settings = false"          
+        @show-settings="show_settings = false"          
       />
       <!--history-->
       <v-card 
@@ -18,7 +18,7 @@
           v-if="!cloud_storage_keys.length"
           class="text-center headline mb-4 mt-4"
         >
-          Сканировать QR
+          Scan QR
         </div>
         <v-expansion-panels
           v-if="cloud_storage_keys.length"
