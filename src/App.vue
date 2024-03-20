@@ -7,7 +7,7 @@
     >
       <AppMenu 
         @show-qr-scanner="showQRScanner()"  
-        @show-history="show_history = true"
+        @show-history="show_history = false"
         @show-settings="show_history = false"          
       />
       <!--history-->
@@ -18,7 +18,7 @@
           v-if="!cloud_storage_keys.length"
           class="text-center headline mb-4 mt-4"
         >
-          Scan a QR code!
+          Сканировать QR
         </div>
         <v-expansion-panels
           v-if="cloud_storage_keys.length"
@@ -137,7 +137,7 @@ export default {
       is_telegram_client: false,
       is_telegram_api_updated: false,
       last_code: null,
-      show_history: true,
+      show_history: false,
       // Cloud storage
       cloud_storage_keys: [],
       cloud_storage_values: {},
@@ -149,7 +149,7 @@ export default {
   },
   created() {
     // Binding function to the events types
-    this.TMA.MainButton.setText("Scan QR code");
+    this.TMA.MainButton.setText("Сканировать QR");
     this.TMA.onEvent('qrTextReceived', this.processQRCode);
     this.TMA.onEvent('mainButtonClicked', this.mainButtonClicked);
 
