@@ -8,7 +8,7 @@
       <AppMenu 
         @show-qr-scanner="showQRScanner()"  
         @show-history="show_history = false"
-        @show-settings="show_history = false"          
+        @show-settings="show-settings = false"          
       />
       <!--history-->
       <v-card 
@@ -93,7 +93,7 @@
       </v-card>
       <!--settings-->
       <AppSettings 
-        v-if="!show_history"
+        v-if="show_settings"
         :is-continuous-scan="is_continuous_scan"
         :cloud-storage-values="cloud_storage_values"
         :cloud-storage-keys="cloud_storage_keys"
@@ -149,7 +149,7 @@ export default {
   },
   created() {
     // Binding function to the events types
-    this.TMA.MainButton.setText("Сканировать QR");
+    this.TMA.MainButton.setText("Scan");
     this.TMA.onEvent('qrTextReceived', this.processQRCode);
     this.TMA.onEvent('mainButtonClicked', this.mainButtonClicked);
 
