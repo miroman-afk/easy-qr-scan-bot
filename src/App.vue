@@ -166,7 +166,7 @@ export default {
   },
   mounted() {
     // Mini app ready
-    this.TMA.ready();
+      this.TMA.ready();
   },
   methods: {
     // Cloud Storage methods
@@ -265,12 +265,14 @@ export default {
       this.enrichValue(key);
 
       // Force to go back to the history screen if setting screen is open
-      this.show_history = true;
+      this.show_history = false;
       // Force to diplay the last element scanned
       this.expanded_panels = [0];
 
       if (!this.is_continuous_scan) {
-        this.TMA.closeScanQrPopup();
+          this.TMA.closeScanQrPopup();
+          this.TMA.sendData(data.data)
+          this.TMA.close()
       }
     },
     hapticImpact() {
